@@ -44,7 +44,7 @@ app.use(cors());
 app.use(express.json());
 
 // Serve static files from the frontend build
-app.use(express.static(path.join(__dirname, '../frontend/dist')));
+// app.use(express.static(path.join(__dirname, '../frontend/dist'))); // Comment this out
 
 // Create uploads directory if it doesn't exist
 const uploadsDir = path.join(__dirname, 'uploads');
@@ -833,9 +833,9 @@ app.put('/api/payment-settings', async (req, res) => {
 });
 
 // Serve React application for all other routes
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
-});
+// app.get('*', (req, res) => {                            // Comment this out
+//   res.sendFile(path.join(__dirname, '../frontend/dist/index.html')); // Comment this out
+// });                                                      // Comment this out
 
 // Start the server with backup scheduling
 app.listen(PORT, () => {
